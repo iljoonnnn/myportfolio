@@ -1,12 +1,15 @@
 ---
-title: "test_test"
+title: "거래 시뮬레이션"
 jupyter: python3
 ---
 
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+당신은 모험을 마치고 허름한 상점에 도착했다.
 
 ```{python}
-1 + 1
+#| echo: false
+player_gold = 0
+
+print("현재 당신의 주머니에 있는 금화는 몇개입니까?")
+print("현재 당신의 주머니에 있는 금화는" + str(player_gold) + "개이군요")
 ```
+
