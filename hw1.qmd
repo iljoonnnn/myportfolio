@@ -1,0 +1,73 @@
+---
+title: "hw1"
+editor: visual
+---
+
+### 84p
+```{python}
+import pandas as pd
+mydata = pd.DataFrame({'제품' : ['사과', '딸기', '수박'],
+          '가격' : [1800, 1500, 3000],
+          '판매량' : [24, 38, 13]})
+mydata
+```
+```{python}
+price_mean = sum(mydata['가격'])/len(mydata)
+print('가격 평균=', price_mean)
+sales_mean = sum(mydata['판매량'])/len(mydata)
+print('판매량 평균=', sales_mean)
+```
+
+
+### 115p
+
+```{python}
+raw_data = pd.read_csv('data/mpg.csv')
+raw_data.head()
+```
+```{python}
+new_data = raw_data.copy()
+new_data = new_data.rename(columns = {'cty': 'city'})
+new_data = new_data.rename(columns = {'hwy': 'hightway'})
+new_data.head()
+```
+
+### 130p
+
+```{python}
+raw_midwest = pd.read_csv('data/midwest.csv')
+raw_midwest.head()
+raw_midwest.tail()
+raw_midwest.shape
+raw_midwest.info()
+raw_midwest.describe()
+```
+
+```{python}
+new_midwest = raw_midwest.copy()
+new_midwest = new_midwest.rename(columns = {'poptotal' : 'total'})
+new_midwest = new_midwest.rename(columns = {'popasian' : 'asian'})
+new_midwest.head()
+```
+
+```{python}
+import matplotlib.pyplot as plt
+plt.clf()
+new_midwest['asian_total'] = new_midwest['asian'] / new_midwest['total'] * 100
+new_midwest['asian_total'].plot.hist(rot=0)
+plt.show()
+```
+
+```{python}
+import numpy as np
+asian_total_mean = sum(new_midwest['asian_total']) / len(new_midwest)
+new_midwest['grade'] = np.where(new_midwest['asian_total']>asian_total_mean, 'large', 'small')
+```
+
+```{python}
+my_series = new_midwest['grade'].value_counts()
+plt.clf()
+my_series.plot.bar(rot=0)
+plt.show()
+```
+
