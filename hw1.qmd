@@ -1,6 +1,6 @@
 ---
 title: "hw1"
-editor: visual
+jupyter: python3
 ---
 
 ### 84p
