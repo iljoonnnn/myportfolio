@@ -1,4 +1,49 @@
 ---
-title: "hw2_240716"
-editor: visual
+title: "hw2"
+jupyter: python3
 ---
+
+# 144p
+
+```{python}
+#라이브러리, 데이터 불러오기
+import pandas as pd
+import numpy as np
+mpg = pd.read_csv('data/mpg.csv')
+```
+
+## Q1
+```{python}
+#배기량이 4이하인 자동차의 고속도로 연비 평균
+mpg.query('displ <= 4')['hwy'].mean()
+```
+
+```{python}
+#배기량이 5이상상인 자동차의 고속도로 연비 평균
+mpg.query('displ >= 5')['hwy'].mean()
+```
+배기량이 4이하인 자동차의 고속도로 연비 평균이 더 높다.
+
+## Q2
+```{python}
+#아우디 자동차의 도시연비 평균
+mpg.query('manufacturer == "audi"')["cty"].mean()
+```
+```{python}
+#도요타 자동차의 도시연비 평균
+mpg.query('manufacturer == "toyota"')["cty"].mean()
+```
+도요타 자동차 연비 평균이 더 높다.
+
+## Q3
+```{python}
+#쉐보레, 포드, 혼다 자동차들의 고속도로 연비 평균
+mpg.query('manufacturer in ["chevrolet","fold","honda"]')["hwy"].mean()
+```
+
+# 153p
+```{python}
+#아우디에서 생산한 자동차 중 고속도로 연비가 높은 순위 5개
+mpg.query('manufacturer == "audi"').sort_values("hwy", ascending = False).head(5)
+```
+
