@@ -4,6 +4,7 @@ editor: visual
 ---
 
 ### 84p
+
 ```{python}
 import pandas as pd
 mydata = pd.DataFrame({'제품' : ['사과', '딸기', '수박'],
@@ -11,6 +12,7 @@ mydata = pd.DataFrame({'제품' : ['사과', '딸기', '수박'],
           '판매량' : [24, 38, 13]})
 mydata
 ```
+
 ```{python}
 price_mean = sum(mydata['가격'])/len(mydata)
 print('가격 평균=', price_mean)
@@ -18,13 +20,13 @@ sales_mean = sum(mydata['판매량'])/len(mydata)
 print('판매량 평균=', sales_mean)
 ```
 
-
 ### 115p
 
 ```{python}
 raw_data = pd.read_csv('data/mpg.csv')
 raw_data.head()
 ```
+
 ```{python}
 new_data = raw_data.copy()
 new_data = new_data.rename(columns = {'cty': 'city'})
@@ -70,4 +72,3 @@ plt.clf()
 my_series.plot.bar(rot=0)
 plt.show()
 ```
-
