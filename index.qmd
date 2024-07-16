@@ -1,15 +1,12 @@
 ---
-title: "거래 시뮬레이션"
-jupyter: python3
+title: "첫 화면"
+toc: false
+about:
+    id: hero-heading
+    template: jolla
+    image: logo.webp
+    links: 
+      - icon: github
+        text: Github
+        href: https://github.com
 ---
-
-당신은 모험을 마치고 허름한 상점에 도착했다.
-
-```{python}
-#| echo: false
-player_gold = 0
-
-print("현재 당신의 주머니에 있는 금화는 몇개입니까?")
-print("현재 당신의 주머니에 있는 금화는" + str(player_gold) + "개이군요")
-```
-
