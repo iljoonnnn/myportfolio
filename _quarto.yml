@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "장일준"
+  title: "장일준 포트폴리오 페이지"
   navbar:
     left:
       - href: index.qmd
