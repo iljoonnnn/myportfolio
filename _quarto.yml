@@ -10,7 +10,6 @@ website:
         text: Home
       - href: about.qmd
       - href: hw1.qmd
-        text: home work 1
 
 format:
   html:
