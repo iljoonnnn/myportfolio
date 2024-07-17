@@ -23,7 +23,7 @@ print('판매량 평균=', sales_mean)
 ### 115p
 
 ```{python}
-raw_data = pd.read_csv('data/mpg.csv')
+raw_data = pd.read_csv('../../data/mpg.csv')
 raw_data.head()
 ```
 
