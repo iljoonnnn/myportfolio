@@ -10,7 +10,7 @@ website:
           text: Home
         - href: hw1.qmd
           text: hw1
-        - href: hw2.qmd
+        - href: hw2_240716.qmd
           text: hw2
 
 format:
