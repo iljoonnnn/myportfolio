@@ -1,12 +1,13 @@
 ---
-title: "첫 화면"
+title: "장일준"
 toc: false
-about:
+about: 
     id: hero-heading
     template: jolla
     image: img/scatch.png
     links: 
       - icon: github
         text: Github
-        href: https://github.com/iljoonnnn/myportfolio
+        href: https://github.com/iljoonnnn/
 ---
+안녕하세요?
