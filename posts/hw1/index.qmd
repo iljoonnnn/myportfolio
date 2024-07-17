@@ -37,7 +37,7 @@ new_data.head()
 ### 130p
 
 ```{python}
-raw_midwest = pd.read_csv('data/midwest.csv')
+raw_midwest = pd.read_csv('../../data/midwest.csv')
 raw_midwest.head()
 raw_midwest.tail()
 raw_midwest.shape

@@ -9,7 +9,7 @@ jupyter: python3
 #라이브러리, 데이터 불러오기
 import pandas as pd
 import numpy as np
-mpg = pd.read_csv('data/mpg.csv')
+mpg = pd.read_csv('../../data/mpg.csv')
 ```
 
 ## Q1
