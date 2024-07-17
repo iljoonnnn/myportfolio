@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>장일준 - hw1</title>
+<title>장일준 포트폴리오 페이지 - hw1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -119,7 +119,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">장일준</span>
+    <span class="navbar-title">장일준 포트폴리오 페이지</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -133,12 +133,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link active" href="./hw1.html" aria-current="page"> 
 <span class="menu-text">hw1</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./hw2.qmd"> 
+<span class="menu-text">hw2</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -186,7 +186,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="p" class="level3">
 <h3 class="anchored" data-anchor-id="p">84p</h3>
-<div id="598163a8" class="cell" data-execution_count="1">
+<div id="826a53a7" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>mydata <span class="op">=</span> pd.DataFrame({<span class="st">'제품'</span> : [<span class="st">'사과'</span>, <span class="st">'딸기'</span>, <span class="st">'수박'</span>],</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>          <span class="st">'가격'</span> : [<span class="dv">1800</span>, <span class="dv">1500</span>, <span class="dv">3000</span>],</span>
@@ -230,7 +230,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="a39b9f86" class="cell" data-execution_count="2">
+<div id="4c866388" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>price_mean <span class="op">=</span> <span class="bu">sum</span>(mydata[<span class="st">'가격'</span>])<span class="op">/</span><span class="bu">len</span>(mydata)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'가격 평균='</span>, price_mean)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>sales_mean <span class="op">=</span> <span class="bu">sum</span>(mydata[<span class="st">'판매량'</span>])<span class="op">/</span><span class="bu">len</span>(mydata)</span>
@@ -243,7 +243,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="p-1" class="level3">
 <h3 class="anchored" data-anchor-id="p-1">115p</h3>
-<div id="55130608" class="cell" data-execution_count="3">
+<div id="142df469" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>raw_data <span class="op">=</span> pd.read_csv(<span class="st">'data/mpg.csv'</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>raw_data.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -344,7 +344,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="9a06d920" class="cell" data-execution_count="4">
+<div id="0d0e7f9d" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>new_data <span class="op">=</span> raw_data.copy()</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>new_data <span class="op">=</span> new_data.rename(columns <span class="op">=</span> {<span class="st">'cty'</span>: <span class="st">'city'</span>})</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>new_data <span class="op">=</span> new_data.rename(columns <span class="op">=</span> {<span class="st">'hwy'</span>: <span class="st">'hightway'</span>})</span>
@@ -450,7 +450,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="p-2" class="level3">
 <h3 class="anchored" data-anchor-id="p-2">130p</h3>
-<div id="40e8fbe1" class="cell" data-execution_count="5">
+<div id="68f756b1" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>raw_midwest <span class="op">=</span> pd.read_csv(<span class="st">'data/midwest.csv'</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>raw_midwest.head()</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>raw_midwest.tail()</span>
@@ -725,7 +725,7 @@ memory usage: 95.7+ KB</code></pre>
 </div>
 </div>
 </div>
-<div id="9b8de3a4" class="cell" data-execution_count="6">
+<div id="94e70350" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>new_midwest <span class="op">=</span> raw_midwest.copy()</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>new_midwest <span class="op">=</span> new_midwest.rename(columns <span class="op">=</span> {<span class="st">'poptotal'</span> : <span class="st">'total'</span>})</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>new_midwest <span class="op">=</span> new_midwest.rename(columns <span class="op">=</span> {<span class="st">'popasian'</span> : <span class="st">'asian'</span>})</span>
@@ -889,7 +889,7 @@ memory usage: 95.7+ KB</code></pre>
 </div>
 </div>
 </div>
-<div id="b8196ebe" class="cell" data-execution_count="7">
+<div id="0eb9e5d3" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>new_midwest[<span class="st">'asian_total'</span>] <span class="op">=</span> new_midwest[<span class="st">'asian'</span>] <span class="op">/</span> new_midwest[<span class="st">'total'</span>] <span class="op">*</span> <span class="dv">100</span></span>
@@ -903,12 +903,12 @@ memory usage: 95.7+ KB</code></pre>
 </div>
 </div>
 </div>
-<div id="46304029" class="cell" data-execution_count="8">
+<div id="9048b64a" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>asian_total_mean <span class="op">=</span> <span class="bu">sum</span>(new_midwest[<span class="st">'asian_total'</span>]) <span class="op">/</span> <span class="bu">len</span>(new_midwest)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>new_midwest[<span class="st">'grade'</span>] <span class="op">=</span> np.where(new_midwest[<span class="st">'asian_total'</span>]<span class="op">&gt;</span>asian_total_mean, <span class="st">'large'</span>, <span class="st">'small'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="41cb27b1" class="cell" data-execution_count="9">
+<div id="b0705842" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>my_series <span class="op">=</span> new_midwest[<span class="st">'grade'</span>].value_counts()</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>my_series.plot.bar(rot<span class="op">=</span><span class="dv">0</span>)</span>

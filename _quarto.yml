@@ -6,10 +6,12 @@ website:
   title: "장일준 포트폴리오 페이지"
   navbar:
     left:
-      - href: index.qmd
-        text: Home
-      - href: hw1.qmd
-      - href: hw2.qmd
+        - href: index.qmd
+          text: Home
+        - href: hw1.qmd
+          text: hw1
+        - href: hw2.qmd
+          text: hw2
 
 format:
   html:
