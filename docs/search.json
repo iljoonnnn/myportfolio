@@ -124,5 +124,12 @@
     "title": "LS Bigdata School Homework 2",
     "section": "",
     "text": "#쉐보레, 포드, 혼다 자동차들의 고속도로 연비 평균\nmpg.query('manufacturer in [\"chevrolet\",\"fold\",\"honda\"]')[\"hwy\"].mean()\n\nnp.float64(25.321428571428573)"
+  },
+  {
+    "objectID": "Practice barplot.html",
+    "href": "Practice barplot.html",
+    "title": "Practice barplot",
+    "section": "",
+    "text": "import pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\nmpg = pd.read_csv(\"data/mpg.csv\")\n\n\n막대그래프\n\ndf_mpg = mpg.groupby(\"drv\", as_index = False) \\\n    .agg(mean_hwy = (\"hwy\", \"mean\"))\nplt.clf()\nsns.barplot(data = df_mpg.sort_values(\"mean_hwy\"),  #정렬 추가\n            x = \"drv\", y = \"mean_hwy\", hue = \"drv\")\nplt.show()\n\n\n\n\n\n\n\n\n\n\n빈도그래프\n\nplt.clf()\nsns.countplot(data = mpg, x = \"drv\")\nplt.show()"
   }
 ]

@@ -1,0 +1,31 @@
+---
+title: "Practice barplot"
+author: "iljoon"
+format: html
+editor: visual
+---
+
+```{python}
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+mpg = pd.read_csv("data/mpg.csv")
+```
+
+### 막대그래프
+```{python}
+df_mpg = mpg.groupby("drv", as_index = False) \
+    .agg(mean_hwy = ("hwy", "mean"))
+plt.clf()
+sns.barplot(data = df_mpg.sort_values("mean_hwy"),  #정렬 추가
+            x = "drv", y = "mean_hwy", hue = "drv")
+plt.show()
+```
+
+### 빈도그래프
+```{python}
+plt.clf()
+sns.countplot(data = mpg, x = "drv")
+plt.show()
+```
+
