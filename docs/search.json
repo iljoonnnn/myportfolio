@@ -60,7 +60,7 @@
     "href": "blog.html",
     "title": "myblog",
     "section": "",
-    "text": "Practice plot\n\n\n\n\n\n\n\n\n\n\n\niljoon\n\n\n\n\n\n\n\n\n\n\n\n\nLS Bigdata School Homework 2\n\n\n\n\n\n\nhomework\n\n\n\n\n\n\n\n\n\nJul 16, 2024\n\n\niljoon\n\n\n\n\n\n\n\n\n\n\n\n\nLS Bigdata School Homework 1\n\n\n\n\n\n\nhomework\n\n\n\n\n\n\n\n\n\nJul 15, 2024\n\n\niljoon\n\n\n\n\n\n\nNo matching items"
+    "text": "LS Bigdata School Homework 3\n\n\n\n\n\n\nhomework\n\n\n\n\n\n\n\n\n\nJul 22, 2024\n\n\niljoon\n\n\n\n\n\n\n\n\n\n\n\n\nLS Bigdata School Homework 2\n\n\n\n\n\n\nhomework\n\n\n\n\n\n\n\n\n\nJul 16, 2024\n\n\niljoon\n\n\n\n\n\n\n\n\n\n\n\n\nLS Bigdata School Homework 1\n\n\n\n\n\n\nhomework\n\n\n\n\n\n\n\n\n\nJul 15, 2024\n\n\niljoon\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/hw2/index.html",
@@ -138,5 +138,12 @@
     "title": "Practice plot",
     "section": "",
     "text": "데이터 및 패키지 불러오기\n\nimport pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\nimport plotly.express as px\nmpg = pd.read_csv(\"../../data/mpg.csv\")\n\n막대그래프\n\ndf_mpg = mpg.groupby(\"drv\", as_index = False) \\\n    .agg(mean_hwy = (\"hwy\", \"mean\"))\nplt.clf()\nsns.barplot(data = df_mpg.sort_values(\"mean_hwy\"),  #정렬 추가\n            x = \"drv\", y = \"mean_hwy\", hue = \"drv\")\nplt.show()\n\n\n\n\n\n\n\n\n빈도그래프\n\nplt.clf()\nsns.countplot(data = mpg, x = \"drv\")\nplt.show()\n\n\n\n\n\n\n\n\n*plotly를 사용한 산점도\n\npx.scatter(data_frame = mpg, x = 'cty', y = 'hwy', color = 'drv')\n#plt.show 명령어 하는거 아님.\n\n                                                \n\n\n다른 그래프 연습 1\n\npx.scatter(data_frame = mpg, x = 'year', y = 'hwy', color = 'manufacturer')\n\n                                                \n\n\n다른 그래프 연습 2\n\npx.scatter(data_frame = mpg, x = 'cty', y = 'displ', color = 'manufacturer')"
+  },
+  {
+    "objectID": "posts/hw3/h3.html",
+    "href": "posts/hw3/h3.html",
+    "title": "LS Bigdata School Homework 3",
+    "section": "",
+    "text": "데이터 및 패키지 불러오기\n\nimport pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\nimport plotly.express as px\nmpg = pd.read_csv(\"../../data/mpg.csv\")\nmidwest = pd.read_csv(\"../../data/midwest.csv\")\n\n204p 혼자서 해보기\n\n#Q1\nplt.clf()\nsns.scatterplot(data = mpg, x = 'cty', y = 'hwy')\nplt.show()\n\n\n\n\n\n\n\n\n\n#Q2\nplt.clf()\nsns.scatterplot(data = midwest, x = 'poptotal', y = 'popasian')\\\n   .set(xlim = [0, 500000], ylim = [0, 10000])\nplt.show()\n\n\n\n\n\n\n\n\n211p 혼자서 해보기기\n\n#Q1\nmy_df = mpg.query('category == \"suv\"')\\\n           .groupby(\"manufacturer\")\\\n           .agg(mean_cty = ('cty', 'mean'))\\\n           .sort_values('mean_cty', ascending = False)\\\n           .head(5)\nplt.clf()\nsns.barplot(data = my_df, x = 'manufacturer', y = 'mean_cty')\nplt.show()\n\n\n\n\n\n\n\n\n\n#Q2\nplt.clf()\nmy_df2 = mpg.groupby(\"category\")\\\n            .agg(n = (\"category\", 'count'))\\\n            .sort_values('n', ascending = False)\nsns.barplot(data = my_df2, x = \"category\", y = 'n')\nplt.show()\n\n\n\n\n\n\n\n\n막대그래프\n\ndf_mpg = mpg.groupby(\"drv\", as_index = False) \\\n    .agg(mean_hwy = (\"hwy\", \"mean\"))\nplt.clf()\nsns.barplot(data = df_mpg.sort_values(\"mean_hwy\"),  #정렬 추가\n            x = \"drv\", y = \"mean_hwy\", hue = \"drv\")\nplt.show()\n\n\n\n\n\n\n\n\n빈도그래프\n\nplt.clf()\nsns.countplot(data = mpg, x = \"drv\")\nplt.show()\n\n\n\n\n\n\n\n\n*plotly를 사용한 산점도\n\npx.scatter(data_frame = mpg, x = 'cty', y = 'hwy', color = 'drv')\n#plt.show 명령어 하는거 아님.\n\n                                                \n\n\n다른 그래프 연습 1\n\npx.scatter(data_frame = mpg, x = 'year', y = 'hwy', color = 'manufacturer')\n\n                                                \n\n\n다른 그래프 연습 2\n\npx.scatter(data_frame = mpg, x = 'cty', y = 'displ', color = 'manufacturer')"
   }
 ]
