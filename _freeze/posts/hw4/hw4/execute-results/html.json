@@ -1,0 +1,12 @@
+{
+  "hash": "63747a4b32eda9a0c9f25ea6948b1cd7",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: LS Bigdata School Homework 4\nauthor: iljoon\ndate: '2024-07-25'\ncategories:\n  - homework\n---\n\n# 문제 1\n정규분포 pdf 값을 계산하는 자신만의 파이썬 함수를 정의하고, 정규분포 mu = 3, sigma = 2 의 pdf를 그릴 것.\nscipy.stats 함수 사용 안하고 하기.\n\n![정규분포 함수 식](././img/정규분포 식.png)\n\n::: {#fc19e939 .cell execution_count=1}\n``` {.python .cell-code}\nimport numpy as np\nimport math\n```\n:::\n\n\n::: {#842dbc54 .cell execution_count=2}\n``` {.python .cell-code}\ndef nomal_distribution_function(x, mu, sigma):\n    result=(np.exp(1)**((((x-mu)/sigma)**2)/(-2)))/(sigma*np.sqrt(2*(math.pi)))\n    return result\n```\n:::\n\n\n::: {#8fe06a10 .cell execution_count=3}\n``` {.python .cell-code}\nnomal_distribution_function(0, 3, 2)\n```\n\n::: {.cell-output .cell-output-display execution_count=3}\n```\nnp.float64(0.06475879783294587)\n```\n:::\n:::\n\n\n# 문제 2\n파이썬 scipy 패키지 사용해서 다음과 같은 확률을 구하시오.\nX ~ N(2, 3^2)\n1) P(X < 3)\n2) P(2 < X < 5)\n3) P(X < 3 or X > 7)\n\n::: {#65dda47d .cell execution_count=4}\n``` {.python .cell-code}\nfrom scipy.stats import bernoulli\nfrom scipy.stats import binom\nfrom scipy.stats import norm\n```\n:::\n\n\n::: {#26c17536 .cell execution_count=5}\n``` {.python .cell-code}\n#1\nnorm.cdf(3, 2, 3)\n```\n\n::: {.cell-output .cell-output-display execution_count=5}\n```\nnp.float64(0.6305586598182363)\n```\n:::\n:::\n\n\n::: {#5d4ca3da .cell execution_count=6}\n``` {.python .cell-code}\n#2\nnorm.cdf(5, 2, 3) - norm.cdf(2, 2, 3)\n```\n\n::: {.cell-output .cell-output-display execution_count=6}\n```\nnp.float64(0.3413447460685429)\n```\n:::\n:::\n\n\n::: {#2e55f99c .cell execution_count=7}\n``` {.python .cell-code}\n#3\nnorm.cdf(3, 2, 3) + (1 - norm.cdf(7, 2, 3))\n```\n\n::: {.cell-output .cell-output-display execution_count=7}\n```\nnp.float64(0.678349012091051)\n```\n:::\n:::\n\n\n# 문제 3\nLS 빅데이터 스쿨 학생들의 중간고사 점수는 평균이 30이고, 분산이 4인 정규분포를 따른다.\n상위 5%에 해당하는 학생의 점수는?\n\n::: {#3ba42a38 .cell execution_count=8}\n``` {.python .cell-code}\nnorm.ppf(0.95, 30, 2)\n```\n\n::: {.cell-output .cell-output-display execution_count=8}\n```\nnp.float64(33.28970725390295)\n```\n:::\n:::\n\n\n",
+    "supporting": [
+      "hw4_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

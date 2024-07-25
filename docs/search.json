@@ -60,7 +60,7 @@
     "href": "blog.html",
     "title": "myblog",
     "section": "",
-    "text": "LS Bigdata School Homework 3\n\n\n\n\n\n\nhomework\n\n\n\n\n\n\n\n\n\nJul 22, 2024\n\n\niljoon\n\n\n\n\n\n\n\n\n\n\n\n\nLS Bigdata School Homework 2\n\n\n\n\n\n\nhomework\n\n\n\n\n\n\n\n\n\nJul 16, 2024\n\n\niljoon\n\n\n\n\n\n\n\n\n\n\n\n\nLS Bigdata School Homework 1\n\n\n\n\n\n\nhomework\n\n\n\n\n\n\n\n\n\nJul 15, 2024\n\n\niljoon\n\n\n\n\n\n\nNo matching items"
+    "text": "LS Bigdata School Homework 4\n\n\n\n\n\n\nhomework\n\n\n\n\n\n\n\n\n\nJul 25, 2024\n\n\niljoon\n\n\n\n\n\n\n\n\n\n\n\n\nLS Bigdata School Homework 3\n\n\n\n\n\n\nhomework\n\n\n\n\n\n\n\n\n\nJul 22, 2024\n\n\niljoon\n\n\n\n\n\n\n\n\n\n\n\n\nLS Bigdata School Homework 2\n\n\n\n\n\n\nhomework\n\n\n\n\n\n\n\n\n\nJul 16, 2024\n\n\niljoon\n\n\n\n\n\n\n\n\n\n\n\n\nLS Bigdata School Homework 1\n\n\n\n\n\n\nhomework\n\n\n\n\n\n\n\n\n\nJul 15, 2024\n\n\niljoon\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/hw2/index.html",
@@ -145,5 +145,12 @@
     "title": "LS Bigdata School Homework 3",
     "section": "",
     "text": "데이터 및 패키지 불러오기\n\nimport pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\nimport plotly.express as px\nmpg = pd.read_csv(\"../../data/mpg.csv\")\nmidwest = pd.read_csv(\"../../data/midwest.csv\")\n\n204p 혼자서 해보기\n\n#Q1\nplt.clf()\nsns.scatterplot(data = mpg, x = 'cty', y = 'hwy')\nplt.show()\n\n\n\n\n\n\n\n\n\n#Q2\nplt.clf()\nsns.scatterplot(data = midwest, x = 'poptotal', y = 'popasian')\\\n   .set(xlim = [0, 500000], ylim = [0, 10000])\nplt.show()\n\n\n\n\n\n\n\n\n211p 혼자서 해보기기\n\n#Q1\nmy_df = mpg.query('category == \"suv\"')\\\n           .groupby(\"manufacturer\")\\\n           .agg(mean_cty = ('cty', 'mean'))\\\n           .sort_values('mean_cty', ascending = False)\\\n           .head(5)\nplt.clf()\nsns.barplot(data = my_df, x = 'manufacturer', y = 'mean_cty')\nplt.show()\n\n\n\n\n\n\n\n\n\n#Q2\nplt.clf()\nmy_df2 = mpg.groupby(\"category\")\\\n            .agg(n = (\"category\", 'count'))\\\n            .sort_values('n', ascending = False)\nsns.barplot(data = my_df2, x = \"category\", y = 'n')\nplt.show()\n\n\n\n\n\n\n\n\n막대그래프\n\ndf_mpg = mpg.groupby(\"drv\", as_index = False) \\\n    .agg(mean_hwy = (\"hwy\", \"mean\"))\nplt.clf()\nsns.barplot(data = df_mpg.sort_values(\"mean_hwy\"),  #정렬 추가\n            x = \"drv\", y = \"mean_hwy\", hue = \"drv\")\nplt.show()\n\n\n\n\n\n\n\n\n빈도그래프\n\nplt.clf()\nsns.countplot(data = mpg, x = \"drv\")\nplt.show()\n\n\n\n\n\n\n\n\n*plotly를 사용한 산점도\n\npx.scatter(data_frame = mpg, x = 'cty', y = 'hwy', color = 'drv')\n#plt.show 명령어 하는거 아님.\n\n                                                \n\n\n다른 그래프 연습 1\n\npx.scatter(data_frame = mpg, x = 'year', y = 'hwy', color = 'manufacturer')\n\n                                                \n\n\n다른 그래프 연습 2\n\npx.scatter(data_frame = mpg, x = 'cty', y = 'displ', color = 'manufacturer')"
+  },
+  {
+    "objectID": "posts/hw4/hw4.html",
+    "href": "posts/hw4/hw4.html",
+    "title": "LS Bigdata School Homework 4",
+    "section": "",
+    "text": "문제 1\n정규분포 pdf 값을 계산하는 자신만의 파이썬 함수를 정의하고, 정규분포 mu = 3, sigma = 2 의 pdf를 그릴 것. scipy.stats 함수 사용 안하고 하기.\n\n\n\n정규분포 함수 식\n\n\n\nimport numpy as np\nimport math\n\n\ndef nomal_distribution_function(x, mu, sigma):\n    result=(np.exp(1)**((((x-mu)/sigma)**2)/(-2)))/(sigma*np.sqrt(2*(math.pi)))\n    return result\n\n\nnomal_distribution_function(0, 3, 2)\n\nnp.float64(0.06475879783294587)\n\n\n\n\n문제 2\n파이썬 scipy 패키지 사용해서 다음과 같은 확률을 구하시오. X ~ N(2, 3^2) 1) P(X &lt; 3) 2) P(2 &lt; X &lt; 5) 3) P(X &lt; 3 or X &gt; 7)\n\nfrom scipy.stats import bernoulli\nfrom scipy.stats import binom\nfrom scipy.stats import norm\n\n\n#1\nnorm.cdf(3, 2, 3)\n\nnp.float64(0.6305586598182363)\n\n\n\n#2\nnorm.cdf(5, 2, 3) - norm.cdf(2, 2, 3)\n\nnp.float64(0.3413447460685429)\n\n\n\n#3\nnorm.cdf(3, 2, 3) + (1 - norm.cdf(7, 2, 3))\n\nnp.float64(0.678349012091051)\n\n\n\n\n문제 3\nLS 빅데이터 스쿨 학생들의 중간고사 점수는 평균이 30이고, 분산이 4인 정규분포를 따른다. 상위 5%에 해당하는 학생의 점수는?\n\nnorm.ppf(0.95, 30, 2)\n\nnp.float64(33.28970725390295)"
   }
 ]
