@@ -54,7 +54,7 @@ k_2 = sum((x - x_bar)**2) / (len(x)-1) # n-1 으로 나누기.
 # s_2 그래프 그리기
 ```{python}
 plt.hist(s_2, bins = 40)
-plt.axvline(my_var, color = 'green', linestyle = 'dashed', linewidth = 0.5)
+plt.axvline(my_var, color = 'green', linestyle = 'dashed', linewidth = 2)
 plt.show()
 plt.clf()
 ```
@@ -62,7 +62,7 @@ plt.clf()
 # k_2 그래프 그리기
 ```{python}
 plt.hist(k_2, bins = 40)
-plt.axvline(my_var, color = 'green', linestyle = 'dashed', linewidth = 0.5)
+plt.axvline(my_var, color = 'green', linestyle = 'dashed', linewidth = 2)
 plt.show()
 plt.clf()
 # k_2가 조금 더 가까운 것으로 확인 된다.
