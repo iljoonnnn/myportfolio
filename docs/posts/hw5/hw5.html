@@ -204,7 +204,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <hr>
 <section id="패키지-불러오기." class="level1">
 <h1>패키지 불러오기.</h1>
-<div id="b6385719" class="cell" data-execution_count="1">
+<div id="7df58a8f" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
@@ -215,27 +215,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="표본-분산-계산해보기" class="level1">
 <h1>표본 분산 계산해보기</h1>
-<div id="38139a94" class="cell" data-execution_count="2">
+<div id="7548de19" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">20240729</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> uniform.rvs(loc <span class="op">=</span> <span class="dv">3</span>, scale <span class="op">=</span> <span class="dv">4</span>, size <span class="op">=</span> <span class="dv">20</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>x_bar <span class="op">=</span> np.mean(x)</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">sum</span>((x <span class="op">-</span> x_bar)<span class="op">**</span><span class="dv">2</span>) <span class="op">/</span> (<span class="bu">len</span>(x)<span class="op">-</span><span class="dv">1</span>)</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 1.669</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="18">
+<div class="cell-output cell-output-display" data-execution_count="26">
 <pre><code>np.float64(1.6697498189003381)</code></pre>
 </div>
 </div>
 </section>
 <section id="이론적인-분산-값" class="level1">
 <h1>이론적인 분산 값</h1>
-<div id="929a3e95" class="cell" data-execution_count="3">
+<div id="75e0a175" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>my_var <span class="op">=</span> uniform.var(loc <span class="op">=</span> <span class="dv">3</span>, scale <span class="op">=</span> <span class="dv">4</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1.333</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="몬테카를로-시뮬레이션을-이용해서-분산값-구하기." class="level1">
 <h1>몬테카를로 시뮬레이션을 이용해서 분산값 구하기.</h1>
-<div id="d64c1c2d" class="cell" data-execution_count="4">
+<div id="c3adb266" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">20240729</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> uniform.rvs(loc <span class="op">=</span> <span class="dv">3</span>, scale <span class="op">=</span> <span class="dv">4</span>, size <span class="op">=</span> <span class="dv">20</span> <span class="op">*</span> <span class="dv">10000</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>x.shape</span>
@@ -248,7 +248,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="s_2-그래프-그리기" class="level1">
 <h1>s_2 그래프 그리기</h1>
-<div id="419cb4e1" class="cell" data-execution_count="5">
+<div id="344c609e" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>plt.hist(s_2, bins <span class="op">=</span> <span class="dv">40</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>plt.axvline(my_var, color <span class="op">=</span> <span class="st">'green'</span>, linestyle <span class="op">=</span> <span class="st">'dashed'</span>, linewidth <span class="op">=</span> <span class="fl">0.5</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
@@ -267,7 +267,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="k_2-그래프-그리기" class="level1">
 <h1>k_2 그래프 그리기</h1>
-<div id="5b2dd59b" class="cell" data-execution_count="6">
+<div id="734e948b" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>plt.hist(k_2, bins <span class="op">=</span> <span class="dv">40</span>)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>plt.axvline(my_var, color <span class="op">=</span> <span class="st">'green'</span>, linestyle <span class="op">=</span> <span class="st">'dashed'</span>, linewidth <span class="op">=</span> <span class="fl">0.5</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
@@ -287,7 +287,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="이번엔-어떤-것이-이론적인-값에-가까웠는지-각각-경우마다-싸움을-붙여보겠다." class="level1">
 <h1>이번엔 어떤 것이 이론적인 값에 가까웠는지 각각 경우마다 싸움을 붙여보겠다.</h1>
-<div id="0f41b64d" class="cell" data-execution_count="7">
+<div id="24a258db" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> []</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10000</span>):</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (s_2[i] <span class="op">-</span> my_var)<span class="op">**</span><span class="dv">2</span> <span class="op">&lt;</span> (k_2[i] <span class="op">-</span> my_var)<span class="op">**</span><span class="dv">2</span>:</span>
@@ -299,7 +299,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="싸움-결과-시각화." class="level1">
 <h1>싸움 결과 시각화.</h1>
-<div id="29ccbddc" class="cell" data-execution_count="8">
+<div id="2a69f85c" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>sns.countplot(data <span class="op">=</span> result)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
