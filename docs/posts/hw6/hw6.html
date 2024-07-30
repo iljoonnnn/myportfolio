@@ -212,7 +212,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="패키지-불러오기" class="level1">
 <h1>패키지 불러오기</h1>
-<div id="07ffb428" class="cell" data-execution_count="1">
+<div id="62cb6b0c" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
@@ -222,14 +222,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="데이터-불러오기" class="level1">
 <h1>데이터 불러오기</h1>
-<div id="ca90dde2" class="cell" data-execution_count="2">
+<div id="830cd2ac" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 처음 데이터는 용량이 커서 어느정도 전처리 된 데이터를 불러왔다.</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>welfare <span class="op">=</span> pd.read_csv(<span class="st">"../../data/hw6_welfare.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="수업-시간-때-그렸던-그래프" class="level1">
 <h1>수업 시간 때 그렸던 그래프</h1>
-<div id="68c34dce" class="cell" data-execution_count="3">
+<div id="4155684e" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>sex_income <span class="op">=</span> welfare.dropna(subset <span class="op">=</span> <span class="st">"income"</span>) <span class="op">\</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>       .groupby(<span class="st">"sex"</span>, as_index<span class="op">=</span><span class="va">False</span>) <span class="op">\</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>       .agg(mean_income <span class="op">=</span> (<span class="st">"income"</span>, <span class="st">"mean"</span>))</span>
@@ -255,7 +255,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="여성-월급-테이블-남성-월급-테이블-뽑기" class="level1">
 <h1>여성-월급 테이블 / 남성-월급 테이블 뽑기</h1>
-<div id="13c43097" class="cell" data-execution_count="4">
+<div id="7d04cac5" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>female_income <span class="op">=</span> welfare <span class="op">\</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    .dropna(subset <span class="op">=</span> <span class="st">"income"</span>) <span class="op">\</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    .query(<span class="st">'sex == "female"'</span>)[[<span class="st">"sex"</span>, <span class="st">"income"</span>]]</span>
@@ -267,39 +267,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="평균-구하기" class="level1">
 <h1>평균 구하기</h1>
-<div id="aff47d32" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>female_x_var <span class="op">=</span> female_income[<span class="st">"income"</span>].mean()</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>male_x_var <span class="op">=</span> male_income[<span class="st">"income"</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="34e95ab7" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>female_x_var <span class="op">=</span> female_income[<span class="st">"income"</span>].mean() <span class="co"># 186.29309576837417</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>male_x_var <span class="op">=</span> male_income[<span class="st">"income"</span>].mean() <span class="co"># 349.03757099169945</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="표본분산-구하기" class="level1">
 <h1>표본분산 구하기</h1>
-<div id="b869d6bf" class="cell" data-execution_count="6">
+<div id="4474f5c0" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># sum((female_income["income"] - female_income_mean)**2) / (len(female_income)-1)</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>female_s_2 <span class="op">=</span> female_income[<span class="st">"income"</span>].var()</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>male_s_2 <span class="op">=</span> male_income[<span class="st">"income"</span>].var()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>female_s_2 <span class="op">=</span> female_income[<span class="st">"income"</span>].var() <span class="co"># 17439.157372096437</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>male_s_2 <span class="op">=</span> male_income[<span class="st">"income"</span>].var() <span class="co"># 47463.96187451692</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="표준편차-구하기" class="level1">
 <h1>표준편차 구하기</h1>
-<div id="0e56723e" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>female_sigma <span class="op">=</span> np.sqrt(female_s_2)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>male_sigma <span class="op">=</span> np.sqrt(male_s_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="64f58be0" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>female_sigma <span class="op">=</span> np.sqrt(female_s_2) <span class="co"># 132.05740180730666</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>male_sigma <span class="op">=</span> np.sqrt(male_s_2) <span class="co"># 217.86225435930135</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="신뢰구간-95-구하기" class="level1">
 <h1>신뢰구간 95% 구하기</h1>
-<div id="d8044df3" class="cell" data-execution_count="8">
+<div id="f7c403d1" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>female_025 <span class="op">=</span> norm.ppf(<span class="fl">0.025</span>, loc <span class="op">=</span> female_x_var, scale <span class="op">=</span> female_sigma)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>female_975 <span class="op">=</span> norm.ppf(<span class="fl">0.975</span>, loc <span class="op">=</span> female_x_var, scale <span class="op">=</span> female_sigma)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>male_025 <span class="op">=</span> norm.ppf(<span class="fl">0.025</span>, loc <span class="op">=</span> male_x_var, scale <span class="op">=</span> male_sigma)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>male_975 <span class="op">=</span> norm.ppf(<span class="fl">0.975</span>, loc <span class="op">=</span> male_x_var, scale <span class="op">=</span> male_sigma)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># -72.53465566588156</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>female_975 <span class="op">=</span> norm.ppf(<span class="fl">0.975</span>, loc <span class="op">=</span> female_x_var, scale <span class="op">=</span> female_sigma)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 445.1208472026299</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>male_025 <span class="op">=</span> norm.ppf(<span class="fl">0.025</span>, loc <span class="op">=</span> male_x_var, scale <span class="op">=</span> male_sigma)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># -77.96460114323565</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>male_975 <span class="op">=</span> norm.ppf(<span class="fl">0.975</span>, loc <span class="op">=</span> male_x_var, scale <span class="op">=</span> male_sigma)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 776.0397431266344</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="시각화-하기." class="level1">
 <h1>시각화 하기.</h1>
-<div id="5b79543f" class="cell" data-execution_count="9">
+<div id="6557f773" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>sex_income <span class="op">=</span> welfare.dropna(subset <span class="op">=</span> <span class="st">"income"</span>) <span class="op">\</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>       .groupby(<span class="st">"sex"</span>, as_index<span class="op">=</span><span class="va">False</span>) <span class="op">\</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>       .agg(mean_income <span class="op">=</span> (<span class="st">"income"</span>, <span class="st">"mean"</span>))</span>
