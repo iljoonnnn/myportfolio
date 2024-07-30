@@ -1,7 +1,7 @@
 ---
 title: "LS Bigdata School Homework 5"
 author: iljoon
-date: "2024-07-30"
+date: "2024-07-29"
 categories: [homework]
 jupyter: python3
 ---
