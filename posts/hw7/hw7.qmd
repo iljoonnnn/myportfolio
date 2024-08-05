@@ -1,0 +1,51 @@
+---
+title: "LS Bigdata School Homework 7"
+author: iljoon
+date: "2024-08-05"
+categories: [homework]
+jupyter: python3
+---
+
+# 교제 57페이지 자동차 문제
+```{python}
+import numpy as np
+from scipy.stats import t
+myarray = np.array([15.078, 15.752, 15.549, 15.56, 16.098, 13.277, 15.462, 16.116, 15.214, 16.93, 14.118, 14.927, 15.382, 16.709, 16.804])
+```
+
+# 2. 검정을 위한 가설을 명확하게 서술하시오.
+```{python}
+'''
+h0(귀무가설): 슬통 자동차는 에너지 소비 효율이 16.0 이상이다.
+hA(대립가설): 슬통 자동차는 에너지 소비 효율이 16.0 미만이다.
+'''
+```
+
+# 3. 검정통계량 계산하시오.
+```{python}
+# t = {x_bar - mu0} / {S / root(n)}
+x_bar = myarray.mean() # 표본 평균
+mu_zero = 16.0 # 귀무가설에서 주장하는 평균 값
+my_s = np.std(myarray, ddof=1) # n-1로 나눠진 분산의 제곱근 s
+my_n = len(myarray) # n
+
+t_value = (x_bar - mu_zero) / (my_s / np.sqrt(my_n))
+t_value # -1.85
+```
+
+# 4. p‑value을 구하세요. (유의확률)
+```{python}
+p_value = t.cdf(x = t_value, df = my_n-1)
+p_value #0.042
+# 이 말은 0.042 확률로 귀무가설을 기각하고 대립가설을 채택하는 것이다? 맞나요?
+```
+
+# 6. 현대자동차의 신형 모델의 평균 복합 에너지 소비효율에 대하여 95% 신뢰구간을 구해보세요.
+```{python}
+x_bar + my_s / np.sqrt(my_n) # 15.784
+x_bar - my_s / np.sqrt(my_n) # 15.278
+# 15.278 ~ 15.784
+```
+
+
+
