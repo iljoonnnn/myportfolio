@@ -196,7 +196,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="교제-57페이지-자동차-문제" class="level1">
 <h1>교제 57페이지 자동차 문제</h1>
-<div id="a3994218" class="cell" data-execution_count="1">
+<div id="a4a88dc7" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> t</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>myarray <span class="op">=</span> np.array([<span class="fl">15.078</span>, <span class="fl">15.752</span>, <span class="fl">15.549</span>, <span class="fl">15.56</span>, <span class="fl">16.098</span>, <span class="fl">13.277</span>, <span class="fl">15.462</span>, <span class="fl">16.116</span>, <span class="fl">15.214</span>, <span class="fl">16.93</span>, <span class="fl">14.118</span>, <span class="fl">14.927</span>, <span class="fl">15.382</span>, <span class="fl">16.709</span>, <span class="fl">16.804</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -204,50 +204,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="검정을-위한-가설을-명확하게-서술하시오." class="level1">
 <h1>2. 검정을 위한 가설을 명확하게 서술하시오.</h1>
-<div id="b489dbda" class="cell" data-execution_count="2">
+<div id="86264c42" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">h0(귀무가설): 슬통 자동차는 에너지 소비 효율이 16.0 이상이다.</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">hA(대립가설): 슬통 자동차는 에너지 소비 효율이 16.0 미만이다.</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>'\nh0(귀무가설): 슬통 자동차는 에너지 소비 효율이 16.0 이상이다.\nhA(대립가설): 슬통 자동차는 에너지 소비 효율이 16.0 미만이다.\n'</code></pre>
 </div>
 </div>
 </section>
 <section id="검정통계량-계산하시오." class="level1">
 <h1>3. 검정통계량 계산하시오.</h1>
-<div id="f998e17e" class="cell" data-execution_count="3">
+<div id="d7893670" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># t = {x_bar - mu0} / {S / root(n)}</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>x_bar <span class="op">=</span> myarray.mean() <span class="co"># 표본 평균</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>x_bar <span class="op">=</span> myarray.mean() <span class="co"># 표본 평균 # 15.531</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>mu_zero <span class="op">=</span> <span class="fl">16.0</span> <span class="co"># 귀무가설에서 주장하는 평균 값</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>my_s <span class="op">=</span> np.std(myarray, ddof<span class="op">=</span><span class="dv">1</span>) <span class="co"># n-1로 나눠진 분산의 제곱근 s</span></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>my_n <span class="op">=</span> <span class="bu">len</span>(myarray) <span class="co"># n</span></span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>t_value <span class="op">=</span> (x_bar <span class="op">-</span> mu_zero) <span class="op">/</span> (my_s <span class="op">/</span> np.sqrt(my_n))</span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>t_value <span class="co"># -1.85</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>np.float64(-1.8500447456376756)</code></pre>
 </div>
 </div>
 </section>
 <section id="pvalue을-구하세요.-유의확률" class="level1">
 <h1>4. p‑value을 구하세요. (유의확률)</h1>
-<div id="6ba07ce4" class="cell" data-execution_count="4">
+<div id="5e213644" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>p_value <span class="op">=</span> t.cdf(x <span class="op">=</span> t_value, df <span class="op">=</span> my_n<span class="op">-</span><span class="dv">1</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>p_value <span class="co">#0.042</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 이 말은 0.042 확률로 귀무가설을 기각하고 대립가설을 채택하는 것이다? 맞나요?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>p_value <span class="co">#0.042</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>np.float64(0.042762417664207845)</code></pre>
 </div>
 </div>
+<p>따라서 표본 평균 15.531이 틀릴 확률은 4.2% 이 확률은 유의수준 1%보다 높다. 15.531이 아닐 확률이 크다고 할 수 있다 따라서 16 이상이라고 본다. 귀무가설을 채택!</p>
 </section>
 <section id="현대자동차의-신형-모델의-평균-복합-에너지-소비효율에-대하여-95-신뢰구간을-구해보세요." class="level1">
 <h1>6. 현대자동차의 신형 모델의 평균 복합 에너지 소비효율에 대하여 95% 신뢰구간을 구해보세요.</h1>
-<div id="985a3c2b" class="cell" data-execution_count="5">
+<div id="6102f757" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>x_bar <span class="op">+</span> my_s <span class="op">/</span> np.sqrt(my_n) <span class="co"># 15.784</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>x_bar <span class="op">-</span> my_s <span class="op">/</span> np.sqrt(my_n) <span class="co"># 15.278</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 15.278 ~ 15.784</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>np.float64(15.278622338169125)</code></pre>
 </div>
 </div>
