@@ -8,14 +8,13 @@ website:
     left:
         - href: index.qmd
           text: Home
-        - href: posts/index.qmd
-          text: All posts
+        - href: recent posts.qmd
+          text: recent posts
 
 
 format:
   html:
     theme: cosmo
-    css: styles.css
     toc: true
 
 

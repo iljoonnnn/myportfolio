@@ -23,5 +23,17 @@
       "/posts/hw2/h2.html",
       "/posts/hw1/hw1.html"
     ]
+  },
+  {
+    "listing": "/recent posts.html",
+    "items": [
+      "/posts/hw7/hw7.html",
+      "/posts/hw6/hw6.html",
+      "/posts/hw5/hw5.html",
+      "/posts/hw4/hw4.html",
+      "/posts/hw3/h3.html",
+      "/posts/hw2/h2.html",
+      "/posts/hw1/hw1.html"
+    ]
   }
 ]
