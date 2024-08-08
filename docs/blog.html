@@ -78,9 +78,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -128,7 +128,6 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -153,8 +152,8 @@ window.Quarto = {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./posts/index.html"> 
-<span class="menu-text">All posts</span></a>
+    <a class="nav-link active" href="./blog.html" aria-current="page"> 
+<span class="menu-text">Blog</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -169,7 +168,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(8)</span></div><div class="category" data-category="homework">homework <span class="quarto-category-count">(7)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(7)</span></div><div class="category" data-category="homework">homework <span class="quarto-category-count">(7)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -196,262 +195,203 @@ window.Quarto = {
 
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1723077423997" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
-<div class="thumbnail">
-<p><a href="./posts/index.html" class="no-external"></a></p><a href="./posts/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/index.html" class="no-external">Recent posts</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/index.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/index.html" class="no-external">
-
-</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="./posts/index.html" class="no-external"></a></p><a href="./posts/index.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="homework" data-listing-date-sort="1722783600000" data-listing-file-modified-sort="1722905603046" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="151">
-<div class="thumbnail">
-<p><a href="./posts/hw7/hw7.html" class="no-external"></a></p><a href="./posts/hw7/hw7.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/hw7/hw7.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/hw7/hw7.html" class="no-external">LS Bigdata School Homework 7</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/hw7/hw7.html" class="no-external"></a>
-</div>
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="homework" data-listing-date-sort="1722783600000" data-listing-file-modified-sort="1722905603046" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="151">
+<a href="./posts/hw7/hw7.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+LS Bigdata School Homework 7
+</h5>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('homework'); return false;">
 homework
 </div>
 </div>
-<div class="listing-description">
-<a href="./posts/hw7/hw7.html" class="no-external">따라서 표본 평균 15.531이 틀릴 확률은 4.2% 이 확률은 유의수준 1%보다 높다. 15.531이 아닐 확률이 크다고 할 수 있다 따라서 16 이상이라고 본다. 귀무가설을 채택!</a>
+<div class="card-text listing-description">
+따라서 표본 평균 15.531이 틀릴 확률은 4.2% 이 확률은 유의수준 1%보다 높다. 15.531이 아닐 확률이 크다고 할 수 있다 따라서 16 이상이라고 본다. 귀무가설을 채택!
 </div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+iljoon
 </div>
-<div class="metadata">
-<a href="./posts/hw7/hw7.html" class="no-external">
 <div class="listing-date">
 Aug 5, 2024
 </div>
-<div class="listing-author">
-iljoon
+</div>
+</div>
 </div>
 </a>
 </div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="homework" data-listing-date-sort="1722265200000" data-listing-file-modified-sort="1722506896040" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="328">
-<div class="thumbnail">
-<p><a href="./posts/hw6/hw6.html" class="no-external"></a></p><a href="./posts/hw6/hw6.html" class="no-external">
-<p class="card-img-top"><img src="img\숙제6.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/hw6/hw6.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/hw6/hw6.html" class="no-external">LS Bigdata School Homework 6</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/hw6/hw6.html" class="no-external"></a>
-</div>
+<div class="g-col-1" data-index="1" data-categories="homework" data-listing-date-sort="1722265200000" data-listing-file-modified-sort="1722506896040" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="328">
+<a href="./posts/hw6/hw6.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="img\숙제6.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+LS Bigdata School Homework 6
+</h5>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('homework'); return false;">
 homework
 </div>
 </div>
-<div class="listing-description">
-<a href="./posts/hw6/hw6.html" class="no-external">챕터 9-2 설문조사 그래프에서 각 성별 95% 신뢰구간 계산후 그리기</a>
+<div class="card-text listing-description">
+챕터 9-2 설문조사 그래프에서 각 성별 95% 신뢰구간 계산후 그리기
 </div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+iljoon
 </div>
-<div class="metadata">
-<a href="./posts/hw6/hw6.html" class="no-external">
 <div class="listing-date">
 Jul 30, 2024
 </div>
-<div class="listing-author">
-iljoon
+</div>
+</div>
 </div>
 </a>
 </div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="homework" data-listing-date-sort="1722178800000" data-listing-file-modified-sort="1722339988262" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="285">
-<div class="thumbnail">
-<p><a href="./posts/hw5/hw5.html" class="no-external"></a></p><a href="./posts/hw5/hw5.html" class="no-external">
-<p class="card-img-top"><img src="posts\hw5\hw5_files\figure-html\cell-6-output-1.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/hw5/hw5.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/hw5/hw5.html" class="no-external">LS Bigdata School Homework 5</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/hw5/hw5.html" class="no-external"></a>
-</div>
+<div class="g-col-1" data-index="2" data-categories="homework" data-listing-date-sort="1722178800000" data-listing-file-modified-sort="1722339988262" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="285">
+<a href="./posts/hw5/hw5.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="posts\hw5\hw5_files\figure-html\cell-6-output-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+LS Bigdata School Homework 5
+</h5>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('homework'); return false;">
 homework
 </div>
 </div>
-<div class="listing-description">
-<a href="./posts/hw5/hw5.html" class="no-external">표본 분산 계산 시 왜 n-1로 나누는지 알아보도록 하겠습니다.</a>
+<div class="card-text listing-description">
+표본 분산 계산 시 왜 n-1로 나누는지 알아보도록 하겠습니다.
 </div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+iljoon
 </div>
-<div class="metadata">
-<a href="./posts/hw5/hw5.html" class="no-external">
 <div class="listing-date">
 Jul 29, 2024
 </div>
-<div class="listing-author">
-iljoon
+</div>
+</div>
 </div>
 </a>
 </div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="homework" data-listing-date-sort="1721833200000" data-listing-file-modified-sort="1721908506219" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="129">
-<div class="thumbnail">
-<p><a href="./posts/hw4/hw4.html" class="no-external"></a></p><a href="./posts/hw4/hw4.html" class="no-external">
-<p class="card-img-top"><img src="img\정규분포 식.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/hw4/hw4.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/hw4/hw4.html" class="no-external">LS Bigdata School Homework 4</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/hw4/hw4.html" class="no-external"></a>
-</div>
+<div class="g-col-1" data-index="3" data-categories="homework" data-listing-date-sort="1721833200000" data-listing-file-modified-sort="1721908506219" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="129">
+<a href="./posts/hw4/hw4.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="img\정규분포 식.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+LS Bigdata School Homework 4
+</h5>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('homework'); return false;">
 homework
 </div>
 </div>
-<div class="listing-description">
-<a href="./posts/hw4/hw4.html" class="no-external">정규분포 pdf 값을 계산하는 자신만의 파이썬 함수를 정의하고, 정규분포 mu = 3, sigma = 2 의 pdf를 그릴 것. scipy.stats 함수 사용 안하고 하기.</a>
+<div class="card-text listing-description">
+정규분포 pdf 값을 계산하는 자신만의 파이썬 함수를 정의하고, 정규분포 mu = 3, sigma = 2 의 pdf를 그릴 것. scipy.stats 함수 사용 안하고 하기.
 </div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+iljoon
 </div>
-<div class="metadata">
-<a href="./posts/hw4/hw4.html" class="no-external">
 <div class="listing-date">
 Jul 25, 2024
 </div>
-<div class="listing-author">
-iljoon
+</div>
+</div>
 </div>
 </a>
 </div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="homework" data-listing-date-sort="1721574000000" data-listing-file-modified-sort="1721656137673" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="239">
-<div class="thumbnail">
-<p><a href="./posts/hw3/h3.html" class="no-external"></a></p><a href="./posts/hw3/h3.html" class="no-external">
-<p class="card-img-top"><img src="posts\hw3\h3_files\figure-html\cell-3-output-1.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/hw3/h3.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/hw3/h3.html" class="no-external">LS Bigdata School Homework 3</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/hw3/h3.html" class="no-external"></a>
-</div>
+<div class="g-col-1" data-index="4" data-categories="homework" data-listing-date-sort="1721574000000" data-listing-file-modified-sort="1721656137673" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="239">
+<a href="./posts/hw3/h3.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="posts\hw3\h3_files\figure-html\cell-3-output-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+LS Bigdata School Homework 3
+</h5>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('homework'); return false;">
 homework
 </div>
 </div>
-<div class="listing-description">
-<a href="./posts/hw3/h3.html" class="no-external">데이터 및 패키지 불러오기</a>
+<div class="card-text listing-description">
+데이터 및 패키지 불러오기
 </div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+iljoon
 </div>
-<div class="metadata">
-<a href="./posts/hw3/h3.html" class="no-external">
 <div class="listing-date">
 Jul 22, 2024
 </div>
-<div class="listing-author">
-iljoon
+</div>
+</div>
 </div>
 </a>
 </div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="homework" data-listing-date-sort="1721055600000" data-listing-file-modified-sort="1721202074962" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="72">
-<div class="thumbnail">
-<p><a href="./posts/hw2/h2.html" class="no-external"></a></p><a href="./posts/hw2/h2.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/hw2/h2.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/hw2/h2.html" class="no-external">LS Bigdata School Homework 2</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/hw2/h2.html" class="no-external"></a>
-</div>
+<div class="g-col-1" data-index="5" data-categories="homework" data-listing-date-sort="1721055600000" data-listing-file-modified-sort="1721202074962" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="72">
+<a href="./posts/hw2/h2.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+LS Bigdata School Homework 2
+</h5>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('homework'); return false;">
 homework
 </div>
 </div>
-<div class="listing-description">
-<a href="./posts/hw2/h2.html" class="no-external">배기량이 4이하인 자동차의 고속도로 연비 평균이 더 높다.</a>
+<div class="card-text listing-description">
+배기량이 4이하인 자동차의 고속도로 연비 평균이 더 높다.
 </div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+iljoon
 </div>
-<div class="metadata">
-<a href="./posts/hw2/h2.html" class="no-external">
 <div class="listing-date">
 Jul 16, 2024
 </div>
-<div class="listing-author">
-iljoon
+</div>
+</div>
 </div>
 </a>
 </div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-categories="homework" data-listing-date-sort="1720969200000" data-listing-file-modified-sort="1721202093915" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="100">
-<div class="thumbnail">
-<p><a href="./posts/hw1/hw1.html" class="no-external"></a></p><a href="./posts/hw1/hw1.html" class="no-external">
-<p class="card-img-top"><img src="posts\hw1\hw1_files\figure-html\cell-8-output-1.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/hw1/hw1.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/hw1/hw1.html" class="no-external">LS Bigdata School Homework 1</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/hw1/hw1.html" class="no-external"></a>
-</div>
+<div class="g-col-1" data-index="6" data-categories="homework" data-listing-date-sort="1720969200000" data-listing-file-modified-sort="1721202093915" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="100">
+<a href="./posts/hw1/hw1.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="posts\hw1\hw1_files\figure-html\cell-8-output-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+LS Bigdata School Homework 1
+</h5>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('homework'); return false;">
 homework
 </div>
 </div>
-<div class="listing-description">
-<a href="./posts/hw1/hw1.html" class="no-external">8 rows × 25 columns</a>
+<div class="card-text listing-description">
+8 rows × 25 columns
 </div>
-</div>
-<div class="metadata">
-<a href="./posts/hw1/hw1.html" class="no-external">
-<div class="listing-date">
-Jul 15, 2024
-</div>
+<div class="card-attribution card-text-small justify">
 <div class="listing-author">
 iljoon
 </div>
-</a>
+<div class="listing-date">
+Jul 15, 2024
 </div>
+</div>
+</div>
+</div>
+</a>
 </div>
 </div>
 <div class="listing-no-matching d-none">
