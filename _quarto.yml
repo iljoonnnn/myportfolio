@@ -9,7 +9,7 @@ website:
         - href: index.qmd
           text: Home
         - href: recent posts.qmd
-          text: recent posts
+          text: Recent posts
 
 
 format:
