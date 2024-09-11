@@ -1,0 +1,12 @@
+{
+  "hash": "3fc543043f51537aef2e7d53b8c2a7c0",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"LS Bigdata School Homework 8\"\nauthor: iljoon\ndate: \"2024-09-10\"\ncategories: [homework]\njupyter: python3\n---\n\n\n# 로지스틱 회귀 예제\n\n",
+    "supporting": [
+      "hw8_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
