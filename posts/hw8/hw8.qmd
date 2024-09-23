@@ -1,7 +1,7 @@
 ---
 title: "LS Bigdata School Homework 8"
 author: iljoon
-date: "2024-09-10"
+date: "2024-09-23"
 categories: [homework]
 jupyter: python3
 ---
@@ -24,12 +24,21 @@ import statsmodels.api as sm
 말초혈액의 백혈병 세포 수 (BLAST)
 치료 시작 전 최고 체온 (TEMP)
 '''
+
+# 워킹 디렉토리 설정
+import os
+cwd=os.getcwd()
+parent_dir = os.path.dirname(cwd)
+main_dir = os.path.dirname(parent_dir)
+os.chdir(main_dir)
 ```
+
 
 # 문제 1. 데이터를 로드하고, 로지스틱 회귀모델을 적합하고, 회귀 표를 작성하세요.
 ```{python}
+
 # 데이터 불러오기
-df = pd.read_csv('../data/leukemia_remission.txt', sep='\t')
+df = pd.read_csv('./data/leukemia_remission.txt', sep='\t')
 df
 
 # 로지스틱 회귀모델 적합.

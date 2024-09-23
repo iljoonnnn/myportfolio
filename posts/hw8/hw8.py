@@ -4,6 +4,7 @@
 import numpy as np
 import pandas as pd
 import statsmodels.api as sm
+#pip install statsmodels
 
 '''
 종속변수: 백혈병 세포 관측 불가 여부 (REMISS), 1이면 관측 안됨을 의미
@@ -17,6 +18,14 @@ import statsmodels.api as sm
 말초혈액의 백혈병 세포 수 (BLAST)
 치료 시작 전 최고 체온 (TEMP)
 '''
+
+# 워킹 디렉토리 설정
+import os
+cwd=os.getcwd()
+parent_dir = os.path.dirname(cwd)
+main_dir = os.path.dirname(parent_dir)
+os.chdir(main_dir)
+
 
 ### 문제 1. 데이터를 로드하고, 로지스틱 회귀모델을 적합하고, 회귀 표를 작성하세요.
 # 데이터 불러오기
